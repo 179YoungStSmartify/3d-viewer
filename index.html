@@ -99,7 +99,7 @@ const CIR = {
   ldry_exh:['Laundry exhaust fan',[['gf','exh',7.35,2.14]]],
   ens5_dl:['Ens 5 downlights',[['gf','L',8.47,0,11.6,3.6]]],
   ens5_exh:['Ens 5 exhaust fan',[['gf','exh',10.13,1.53]]],
-  ens5_mir:['Ens 5 mirror LED',[['gf','mir',10.0,0.08,2.4,0]]],
+  ens5_mir:['Ens 5 mirror LED',[['gf','mir',8.53,1.75,2.4,90]]],
   wir5_dl:['Bed 5 WIR downlights',[['gf','L',11.6,0,13.76,3.6]]],
   bed5_dl:['Bed 5 downlights',[['gf','L',13.76,0,19.1,3.6]]],
   bed5_fan:['Bed 5 ceiling fan',[['gf','fan',16.39,1.84]]],
@@ -112,7 +112,7 @@ const CIR = {
   media_fan:['Media ceiling fan',[['gf','fan',13.69,6.41]]],
   bath_dl:['Bath downlights',[['gf','L',17.3,4.8,19.05,8.04]]],
   bath_exh:['Bath exhaust fan',[['gf','exh',18.24,6.37]]],
-  bath_mir:['Bath mirror LED',[['gf','mir',18.2,4.83,1.0,0]]],
+  bath_mir:['Bath mirror LED',[['gf','mir',17.33,5.55,1.0,90]]],
   kit_dl:['Kitchen downlights',[['gf','L',24.5,0,31.0,5.0]]],
   kit_pend:['Island pendant',[['gf','P',24.5,0,31.0,5.0]]],
   kit_bench:['Back-bench LED strip',[['gf','strip',24.6,0.68,30.3,0.68,0.12]]],
@@ -132,26 +132,26 @@ const CIR = {
   balc:['Balcony lights',[['ff','L',-1.3,0.5,1.08,6.7]]],
   wir1_dl:['Bed 1 WIR downlights',[['ff','L',6.0,0.55,8.36,3.6]]],
   wir2_dl:['Bed 1 second WIR light',[['ff','L',6.0,4.8,8.36,6.3]]],
-  ens1_bath:['Ens 1 bath-area downlights',[['ff','L',8.36,0,11.1,1.7]]],
+  ens1_bath:['Ens 1 bath-area downlights',[['ff','L',8.36,0,11.78,1.9]]],
   ens1_van:['Ens 1 vanity downlights',[['ff','L',8.36,2.0,11.9,3.6]]],
   ens1_exh:['Ens 1 exhaust fan',[['ff','exh',10.13,1.01]]],
-  ens1_mir:['Ens 1 mirror LED',[['ff','mir',9.9,3.52,2.1,1]]],
+  ens1_mir:['Ens 1 mirror LED',[['ff','mir',10.55,2.14,2.1,0]]],
   hall_ff:['FF landing & hall downlights',[['ff','L',8.36,3.6,27.95,5.0]]],
-  wc_dl:['WC downlight',[['ff','L',11.1,0,12.7,1.9]]],
+  wc_dl:['WC downlight',[['ff','L',11.78,0,12.7,2.12]]],
   wc_exh:['WC exhaust fan',[['ff','exh',12.36,0.62]]],
   ens2_dl:['Ens 2 downlights',[['ff','L',12.7,0,14.4,3.6]]],
   ens2_exh:['Ens 2 exhaust fan',[['ff','exh',13.69,1.78]]],
-  ens2_mir:['Ens 2 mirror LED',[['ff','mir',13.55,0.08,1.5,0]]],
+  ens2_mir:['Ens 2 mirror LED',[['ff','mir',12.76,0.85,1.5,90]]],
   bed2_dl:['Bed 2 downlights',[['ff','L',14.4,0,18.9,3.6]]],
   bed2_fan:['Bed 2 ceiling fan',[['ff','fan',17.01,1.83]]],
-  bed3_dl:['Bed 3 downlights',[['ff','L',21.85,0,25.8,3.6]]],
+  bed3_dl:['Bed 3 downlights',[['ff','L',21.85,0,26.38,3.6]]],
   bed3_fan:['Bed 3 ceiling fan',[['ff','fan',23.86,1.83]]],
-  ens3_dl:['Ens 3 downlights',[['ff','L',25.8,0,27.95,3.6]]],
+  ens3_dl:['Ens 3 downlights',[['ff','L',26.38,0,27.95,3.6]]],
   ens3_exh:['Ens 3 exhaust fan',[['ff','exh',27.21,1.79]]],
-  ens3_mir:['Ens 3 mirror LED',[['ff','mir',26.9,0.08,1.5,0]]],
+  ens3_mir:['Ens 3 mirror LED',[['ff','mir',27.92,0.85,1.5,90]]],
   ens4_dl:['Ens 4 downlights',[['ff','L',27.95,0,31.3,1.6]]],
   ens4_exh:['Ens 4 exhaust fan',[['ff','exh',29.75,0.81]]],
-  ens4_mir:['Ens 4 mirror LED',[['ff','mir',28.8,0.08,1.2,0]]],
+  ens4_mir:['Ens 4 mirror LED',[['ff','mir',30.8,0.08,1.2,0]]],
   bed4_dl:['Bed 4 / Study downlights',[['ff','L',27.95,1.6,33.7,5.0]]],
   bed4_fan:['Bed 4 / Study ceiling fan',[['ff','fan',31.07,3.28]]],
   study_dl:['Study-end downlight',[['ff','L',31.3,0,33.7,1.6]]],
@@ -162,41 +162,41 @@ const CIR = {
 const TWO_WAY = new Set(['court','hall_gf','stairA','stairB','hall_ff','bed1_dl']);
 // Plates: [level, room, location, x, z, facing, [circuits], confidence]
 const PLATES = [
-  ['gf','Garage','Beside door to hall',6.07,5.9,'-x',['gar_dl'],'High'],
-  ['gf',"Laundry",'External side door',7.3,0.64,'+z',['side_flood'],'Medium'],
-  ['gf',"Laundry",'Door to hall',6.95,3.52,'-z',['ldry_dl','ldry_exh'],'High'],
-  ['gf','Ens 5','End of dwarf wall, by door',11.51,2.25,'-x',['ens5_dl','ens5_exh','ens5_mir'],'High'],
+  ['gf','Garage','Beside door to entry',6.07,4.85,'-x',['gar_dl'],'High'],
+  ['gf',"Laundry",'External side door',6.75,0.65,'+z',['side_flood'],'Medium'],
+  ['gf',"Laundry",'Door to hall',6.75,3.52,'-z',['ldry_dl','ldry_exh'],'High'],
+  ['gf','Ens 5','End of 1200H WC wall',10.36,0.95,'-x',['ens5_dl','ens5_exh','ens5_mir'],'High'],
   ['gf','Bed 5 WIR','WIR entry',13.67,2.25,'-x',['wir5_dl'],'High'],
-  ['gf','Bed 5','Bedroom door',15.2,3.52,'-z',['bed5_dl','bed5_fan'],'High'],
+  ['gf','Bed 5','Bedroom door',14.95,3.52,'-z',['bed5_dl','bed5_fan'],'High'],
   ['gf','Bed 5','Beside courtyard slider',19.0,0.65,'-x',['court'],'High'],
-  ['gf','Hall','Hall side of courtyard slider',19.45,3.7,'+z',['court'],'High'],
-  ['gf','Entry','Inside front door',8.25,6.36,'-z',['front_ext','hall_gf','stairA','stairB'],'Medium'],
-  ['gf','Media','Door from stair hall',12.85,4.9,'+z',['media_dl','media_fan'],'High'],
-  ['gf','Bath','Door',18.68,4.9,'+z',['bath_dl','bath_exh','bath_mir'],'High'],
+  ['gf','Hall','Hall side of courtyard slider',19.45,3.85,'+z',['court'],'High'],
+  ['gf','Entry','Inside front door',7.75,6.36,'-z',['front_ext','hall_gf','stairA','stairB'],'Medium'],
+  ['gf','Media','Door from stair hall',12.72,4.9,'+z',['media_dl','media_fan'],'High'],
+  ['gf','Bath','Door',18.93,4.9,'+z',['bath_dl','bath_exh','bath_mir'],'High'],
   ['gf','Kitchen / hall','WIP corner (4-gang)',23.55,3.85,'+z',['hall_gf','kit_dl','kit_pend','kit_bench'],'Medium'],
   ['gf','Kitchen / hall','WIP corner (3-gang)',24.1,3.85,'+z',['island_led','wine_led','wip_dl'],'Medium'],
-  ['gf','Living','Column beside fridge',31.1,0.62,'+z',['liv_dl','void_dl','void_pend'],'Medium'],
+  ['gf','Living','Column beside fridge',30.97,0.78,'+z',['liv_dl','void_dl','void_pend'],'Medium'],
   ['gf','Alfresco','Hall side of alfresco door',22.5,4.9,'-z',['alf_dl','alf_fan','garden','pool_flood'],'Medium'],
-  ['ff','Bed 1','Bedroom door',8.1,4.72,'-z',['bed1_dl','bed1_corr','bed1_fan','balc'],'Medium'],
+  ['ff','Bed 1','Suite door to landing',7.95,4.72,'-z',['bed1_dl','bed1_corr','bed1_fan','balc'],'Medium'],
   ['ff','Bed 1','Bedhead wall',5.92,3.36,'-x',['bed1_dl'],'High'],
   ['ff','Bed 1 WIR','WIR entry',6.45,3.52,'-z',['wir1_dl'],'High'],
   ['ff','Bed 1 WIR 2','WIR entry',6.2,4.9,'+z',['wir2_dl'],'High'],
   ['ff','Ens 1','Door',8.46,2.45,'+x',['ens1_bath','ens1_van','ens1_exh','ens1_mir'],'High'],
   ['ff','Landing','Top of stairs',8.75,3.7,'+z',['hall_ff','stairA','stairB'],'Medium'],
-  ['ff','WC','Door',12.45,2.0,'+z',['wc_dl','wc_exh'],'High'],
-  ['ff','Ens 2','Door',14.3,0.45,'-x',['ens2_dl','ens2_exh','ens2_mir'],'High'],
-  ['ff','Bed 2','Door',15.95,3.52,'-z',['bed2_dl','bed2_fan'],'High'],
-  ['ff','Bed 3','Door',24.85,3.52,'-z',['bed3_dl','bed3_fan'],'High'],
-  ['ff','Ens 3','Door',26.4,0.12,'+z',['ens3_dl','ens3_exh','ens3_mir'],'High'],
-  ['ff','Ens 4','Door',31.2,0.62,'-x',['ens4_dl','ens4_exh','ens4_mir'],'High'],
-  ['ff','Bed 4 / Study','Door',28.05,3.8,'+x',['bed4_dl','bed4_fan'],'High'],
+  ['ff','WC','Beside WC door (Ens 1)',12.62,2.55,'-x',['wc_dl','wc_exh'],'High'],
+  ['ff','Ens 2','Beside slider from Bed 2',14.3,1.2,'-x',['ens2_dl','ens2_exh','ens2_mir'],'High'],
+  ['ff','Bed 2','Door',16.35,3.52,'-z',['bed2_dl','bed2_fan'],'High'],
+  ['ff','Bed 3','Door',24.55,3.52,'-z',['bed3_dl','bed3_fan'],'High'],
+  ['ff','Ens 3','Beside slider from Bed 3',26.48,1.2,'+x',['ens3_dl','ens3_exh','ens3_mir'],'High'],
+  ['ff','Ens 4','Door',31.2,0.45,'-x',['ens4_dl','ens4_exh','ens4_mir'],'High'],
+  ['ff','Bed 4 / Study','Door',28.05,3.65,'+x',['bed4_dl','bed4_fan'],'High'],
   ['ff','Bed 4 / Study','Wall to void',33.6,1.5,'-x',['study_dl'],'Low'],
-  ['ff','Hall','Hall end, outside Bed 4',27.85,4.25,'-x',['hall_ff'],'High'],
+  ['ff','Hall','Hall end, outside Bed 4',27.6,3.7,'+z',['hall_ff'],'High'],
   ['ff','Lounge','Beside balcony slider',18.8,5.15,'-x',['lounge_dl','lounge_fan','patio_flood'],'Medium'],
 ];
 const ROOMS = {
   gf:[['Garage',3.08,3.5],["L'dry",7.3,2.1],['Ens 5',10,2.0],['WIR',12.7,1.8],['Bed 5',16.4,1.8],['Courtyard',20.5,1.9],['WIP',23.2,1.9],['Kitchen',27.4,1.6],['Dining',32.1,1.6],['Living',36.3,1.6],['Entry',7.3,5.6],['Hall',15.5,4.2],['Stairs',10.5,6.4],['Media',15,6.4],['Bath',18.2,6.4],['Porch',7.3,7.3],['Alfresco',21,6.5],['Pool',33.3,6.6]],
-  ff:[['Balcony',0,3.6],['Bed 1',3.5,3.4],['WIR',7.2,2.1],['Ens 1',10.5,1.8],['Ens 2',13.55,1.8],['Bed 2',16.6,1.8],['Bed 3',23.8,1.8],['Ens 3',26.9,1.8],['Ens 4',29.6,0.8],['Bed 4 / Study',30.8,3.3],['Landing',7.2,4.2],['WIR 2',7.2,5.55],['Hall',20.5,4.3],['Lounge',15.7,6.5],['Patio',21,6.5],['Stair void',10.4,6.5],['Void',36.2,2.5]],
+  ff:[['Balcony',0,3.6],['Bed 1',3.5,3.4],['WIR',7.2,2.1],['Ens 1',10.5,1.8],['Ens 2',13.55,1.8],['Bed 2',16.6,1.8],['Bed 3',24.0,1.8],['Ens 3',27.1,1.8],['Ens 4',29.6,0.8],['Bed 4 / Study',30.8,3.3],['Bed 1 entry',7.2,4.2],['Landing',9.6,4.3],['WIR 2',7.2,5.55],['Hall',20.5,4.3],['Lounge',15.7,6.5],['Patio',21,6.5],['Stair void',10.4,6.5],['Void',36.2,2.5]],
 };
 const GANG_COL = { 1:'#9fb0c4', 2:'#3fc7b4', 3:'#ab8dff', 4:'#ffad42' };
 const WARM = new THREE.Color('#ffc66b');
@@ -281,12 +281,12 @@ function fxBar(level, geo, pos, extraPool) {
   const halo = new THREE.Mesh(geo.clone().scale(1.0, 1, 1), glowMat('#ffcf86')); halo.scale.set(1.6, 3, 1.6); halo.position.copy(pos); levels[level].overlay.add(halo);
   return { level, k: 0, set(k) { mat.emissive.copy(WARM); mat.emissiveIntensity = 3 * k; mat.color.set('#4a4f57').lerp(new THREE.Color('#fff2d4'), k); halo.material.opacity = 0.18 * k; } };
 }
-function fxMirror(level, x, z, w, flip) {
+function fxMirror(level, x, z, w, rotDeg) {
   const g = new THREE.Group(); const mat = new THREE.MeshStandardMaterial({ color: '#4a4f57', emissive: '#000' });
   const h = 0.8, t = 0.025;
   for (const [px, py, sx, sy] of [[0, h / 2, w, t], [0, -h / 2, w, t], [-w / 2, 0, t, h], [w / 2, 0, t, h]]) { const b = new THREE.Mesh(new THREE.BoxGeometry(sx, sy, 0.02), mat); b.position.set(px, py, 0); g.add(b); }
   const halo = new THREE.Mesh(new THREE.PlaneGeometry(w + 0.3, h + 0.3), glowMat('#ffe2b0')); g.add(halo);
-  g.position.set(x, 1.55, z); if (flip) g.rotation.y = Math.PI; levels[level].overlay.add(g);
+  g.position.set(x, 1.55, z); g.rotation.y = THREE.MathUtils.degToRad(rotDeg || 0); levels[level].overlay.add(g);
   return { level, k: 0, set(k) { mat.emissive.copy(WARM); mat.emissiveIntensity = 3 * k; mat.color.set('#4a4f57').lerp(new THREE.Color('#fff2d4'), k); halo.material.opacity = 0.12 * k; } };
 }
 function fxWallLight(level, x, z, nx, nz) {
