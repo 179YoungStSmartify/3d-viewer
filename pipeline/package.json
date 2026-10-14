@@ -1,0 +1,13 @@
+{
+  "name": "179-young-st-model",
+  "private": true,
+  "type": "module",
+  "description": "Rebuilds models/gf.glb and models/ff.glb from src/data.js + src/main.js",
+  "scripts": { "export": "node export.mjs" },
+  "dependencies": {
+    "three": "0.160.0",
+    "esbuild": "^0.25.0",
+    "playwright": "^1.50.0",
+    "@gltf-transform/cli": "^4.1.0"
+  }
+}

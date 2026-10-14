@@ -17,6 +17,7 @@ Interactive 3D model of 179 Young St, Sunnybank showing every light switch plate
 | `index.html` | The whole viewer: switch and circuit data (`CIR`, `PLATES`), scene, UI. three.js 0.160 loads from jsDelivr. |
 | `models/gf.glb`, `models/ff.glb` | Quantised level models (KHR_mesh_quantization) from the floorplan-3d-dashboard pipeline. Light nodes are named `light_<room>_<n>`. |
 | `.github/workflows/pages.yml` | Copies `index.html` and `models/` to Pages. |
+| `pipeline/` | Source for the models: `src/data.js` (rooms, walls, door openings, windows, electrical symbols) and `src/main.js` (scene, furniture, devices, GLB export). `node export.mjs` rebuilds `models/*.glb`. |
 
 ## Editing the switch data
 
@@ -25,6 +26,18 @@ Interactive 3D model of 179 Young St, Sunnybank showing every light switch plate
 - `TWO_WAY` lists the circuits switched from two places.
 
 Coordinates: metres, x along the house from the garage street wall, z across from the northern boundary, each level's floor at y = 0.
+
+## Rebuilding the models
+
+```
+cd pipeline
+npm install
+CHROME_PATH=/path/to/chrome node export.mjs   # CHROME_PATH optional if Playwright's browser is installed
+```
+
+`export.mjs` bundles `src/main.js`, renders it in headless Chromium (SwiftShader, no GPU needed), exports each level with three.js `GLTFExporter`, then runs `gltf-transform dedup`, `weld` and `quantize`. Do not use `gltf-transform optimize` or `join`: they destroy the node names the viewer and Floor3D bind to.
+
+Door openings are `[from, to]` distances along a wall; add `'open'` as a third value for a doorless opening.
 
 ## Caveats
 
